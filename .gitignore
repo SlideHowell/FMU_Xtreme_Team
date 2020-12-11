@@ -1,0 +1,6 @@
+# Ignoring stuff for clean commit from IntelliJ
+*.iml
+out/
+.idea/
+*.kotlin_module
+*.txt
