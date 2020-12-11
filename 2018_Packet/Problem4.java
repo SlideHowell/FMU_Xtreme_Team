@@ -23,7 +23,7 @@ public class Problem4 {
             final Square[][] squares = takeInput(scanner, rows, cols);
 
             System.out.print("Garden #" + (gardenIndex + 1) + ": largest pumpkin patch size is ");
-            System.out.println(new PumpkinPatches(squares).findLargestPumpkinPatch());
+            System.out.println(new Problem4(squares).findLargestPumpkinPatch());
         }
     }
 
