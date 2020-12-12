@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.HashSet;
-public class Problem8_2018
+public class Problem8
 {
     public static void main(String[] args)
     {
