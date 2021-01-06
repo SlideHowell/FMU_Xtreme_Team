@@ -42,6 +42,7 @@ public class problem1
                 }
             }
 
+
             //  pull out the vowels into a StringBuilder and reverse them, then add them to an arraylist for increased manipulation flexibility
                 vowels.reverse();
                 char[] reversedVowels = vowels.toString().toCharArray();
@@ -58,13 +59,13 @@ public class problem1
                 for(int i = 0; i < nameArr.length; i++)
                 {
                     //if vowel position, place vowel
-                    if(i == vowelIndexes.get(0))
+                    if(!vowelIndexes.isEmpty() && i == vowelIndexes.get(0))
                     {
                         newName.append(vowelChars.get(0));
                         vowelChars.remove(0);
                         vowelIndexes.remove(0);
                     }
-                    if(!consonantChars.isEmpty())       //  keeps from throwing index out of bounds error.
+                    else if(!consonantChars.isEmpty())       //  keeps from throwing index out of bounds error.
                     {
                         newName.append(consonantChars.get(0));
                         consonantChars.remove(0);
@@ -72,6 +73,11 @@ public class problem1
                 }
 
                 finalOutput.add(name + ":" + newName);
+
+                //  reset all the stringBuilders, clearing everything out for the next word.
+                remainingConsonants.delete(0, remainingConsonants.length());
+                vowels.delete(0, vowels.length());
+                newName.delete(0, newName.length());
         }
 
         //  print final output
@@ -81,6 +87,7 @@ public class problem1
         }
     }
 
+    //  method to find if char is a vowel
     public static boolean isVowel(char c)
     {
         if(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') return true;
